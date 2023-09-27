@@ -1,9 +1,14 @@
+<p align="center">
+<a href="https://packagist.org/packages/saimyosett/gmo-payment-gateway-php"><img src="https://img.shields.io/packagist/dt/saimyosett/gmo-payment-gateway-php" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/saimyosett/gmo-payment-gateway-php"><img src="https://img.shields.io/packagist/v/saimyosett/gmo-payment-gateway-php" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/saimyosett/gmo-payment-gateway-php"><img src="https://img.shields.io/packagist/l/saimyosett/gmo-payment-gateway-php" alt="License"></a>
+</p>
+
 # GMO-PAYMENT-GATEWAY-PHP
 
 - [Introduction](#introduction)
 - [Installation](#installation)
-- [Configuration](#configuration)
-- [API Response](#response)
+- [API Response](#api-response)
     - [Success Response](#success-response)
     - [Error Response](#error-response)
 - [Member and Credit Card Registration](#member-and-credit-card-registration)
@@ -14,7 +19,7 @@
     - [Save Credit Card](#save-credit-card)
     - [Save Traded Credit Card](#save-traded-credit-card)
     - [Search Credit Card](#search-credit-card)
-    - [Search Credit Card Detail](#search-credit-card-detailh)
+    - [Search Credit Card Detail](#search-credit-card-detail)
     - [Delete Credit Card](#delete-credit-card)
 - [Credit Card Payment](#member-and-credit-card-registration)
     - [Create Transaction](#create-transaction)
@@ -27,7 +32,7 @@
 
 GMO-PAYMENT-GATEWAY-PHP provides an expressive and fluent interface for
 accessing [GMO PAYMENT GATEWAY](https://www.gmo-pg.com/)
-payment services. While using GMO-PAYMENT-GATEWAY-PHP, we recommend reviewing
+payment services. While using this package, we recommend reviewing
 the [GMO PAYMENT GATEWAY API Documentation](https://docs.mul-pay.jp/).
 
 ## Installation
@@ -41,11 +46,11 @@ composer require saimyosett/gmo-payment-gateway-php
 ### Success Response
 
 ```php
-GmoPaymentGateway\API\{Service}Response {
+GmoPaymentGateway\Responses\{Service}Response {
     +success: true,
     +data: [
-      "memberID" => "00000001",
-      "memberName" => "Member Name",
+      "memberID" => "Test-Member-ID",
+      "memberName" => "Test Member Name",
       "deleteFlag" => "0",
     ],
     +errors: [],
@@ -55,7 +60,7 @@ GmoPaymentGateway\API\{Service}Response {
 ### Error Response
 
 ```php
-GmoPaymentGateway\API\ErrorResponse {
+GmoPaymentGateway\Responses\ErrorResponse {
     +errors: [
       [
         "code" => "E01390002",
@@ -85,35 +90,35 @@ $gmopg = new GmoPaymentGateway\GMOPGClient([
 ### Create Member
 
 ```php
-$gmopg->member->create(['memberID' => 'memberID']);
+$gmopg->member->create(['memberID' => 'Test-Member-ID']);
 ```
 
 ### Update Member
 
 ```php
 $gmopg->member->update([
-    'memberID' => 'memberID',
-    'memberName' => 'member name',
+    'memberID' => 'Test-Member-ID',
+    'memberName' => 'Test Member Name',
 ]);
 ```
 
 ### Search Member
 
 ```php
-$gmopg->member->search(['memberID' => 'memberID']);
+$gmopg->member->search(['memberID' => 'Test-Member-ID']);
 ```
 
 ### Delete Member
 
 ```php
-$gmopg->member->delete(['memberID' => 'memberID']);
+$gmopg->member->delete(['memberID' => 'Test-Member-ID']);
 ```
 
 ### Save Credit Card
 
 ```php
 $gmopg->member->saveCard([
-    'memberID' => 'memberID',
+    'memberID' => 'Test-Member-ID',
     'cardNo'   => '4111111111111111',
     'expire'   => '0000',
 ]);
@@ -123,8 +128,8 @@ $gmopg->member->saveCard([
 
 ```php
 $gmopg->member->tradedCard([
-    'memberID' => 'memberID',
-    'orderID'  => 'orderID',
+    'memberID' => 'Test-Member-ID',
+    'orderID'  => 'TEST-ORDER-ID',
     
 ]);
 ```
@@ -133,8 +138,8 @@ $gmopg->member->tradedCard([
 
 ```php
 $gmopg->member->searchCard([
-    'memberID' => 'memberID',
-    'orderID'  => 'orderID',
+    'memberID' => 'Test-Member-ID',
+    'orderID'  => 'TEST-ORDER-ID',
 ]);
 ```
 
@@ -156,7 +161,7 @@ $gmopg->member->searchCardDetail([
 
 ```php
 $gmopg->member->deleteCard([
-    'memberID' => 'memberID',
+    'memberID' => 'Test-Member-ID',
     'cardSeq'  => '0000'
 ]);
 ```
@@ -170,9 +175,9 @@ the [GMO PAYMENT GATEWAY API Documentation](https://docs.mul-pay.jp/payment/cred
 
 ```php
 $gmopg->creditCard->entryTran([
-    'orderID' => 'TEST-1234'
+    'orderID' => 'TEST-ORDER-ID'
     'jobCd'   => 'CAPTURE',
-    'amount'  => 10000,
+    'amount'  => '10000',
 ]);
 ```
 
@@ -180,14 +185,14 @@ $gmopg->creditCard->entryTran([
 
 ```php
 $gmopg->creditCard->execTran([
-    'orderID' => 'orderID'
-    'jobCd'   => 'CAPTURE',
-    'amount'  => 10000,
+    'orderID'    => 'TEST-ORDER-ID'
+    'jobCd'      => 'CAPTURE',
+    'amount'     => '10000',
     'memberID'   => '00000003',
-    'cardSeq'    => 0,
+    'cardSeq'    => '0',
     'accessID'   => '8867bfeec7b7fc35f78320d01c9a6c11',
     'accessPass' => 'c07822acefba90d95417ae37beb198dd',
-    'method'     => 1,
+    'method'     => '1',
 ]);
 ```
 
@@ -197,7 +202,7 @@ $gmopg->creditCard->execTran([
 $gmopg->creditCard->alterTran([
     'accessID'   => '8867bfeec7b7fc35f78320d01c9a6c11',
     'accessPass' => 'c07822acefba90d95417ae37beb198dd',
-    'amount'     => 10000,
+    'amount'     => '10000',
     'jobCd'      => 'CANCEL',
 ]);
 ```
@@ -206,7 +211,7 @@ $gmopg->creditCard->alterTran([
 
 ```php
 $gmopg->creditCard->searchTrade([
-    'orderID' => 'orderID'
+    'orderID' => 'TEST-ORDER-ID'
 ]);
 ```
 
