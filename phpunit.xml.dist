@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.3/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+>
+    <testsuites>
+        <testsuite name="Test Suite">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory suffix=".php">./app</directory>
+            <directory suffix=".php">./src</directory>
+        </include>
+    </source>
+    <php>
+        <env name="SITE_ID" value=""/>
+        <env name="SITE_PASS" value=""/>
+        <env name="SHOP_ID" value=""/>
+        <env name="SHOP_PASS" value=""/>
+        <env name="PUBLIC_KEY" value=""/>
+        <env name="KEY_HASH" value=""/>
+    </php>
+</phpunit>

@@ -1,0 +1,9 @@
+/.phpunit.cache
+/phpunit.xml
+.phpunit.result.cache
+/vendor
+/.fleet
+/.idea
+/.vscode
+.idea
+.DS_Store
