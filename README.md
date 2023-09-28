@@ -56,7 +56,7 @@ composer require saimyosett/gmo-payment-gateway-php
 GmoPaymentGateway\Responses\{Service}Response {
     +success: true,
     +data: [
-      "memberID"   => "Test-Member-ID",
+      "memberID" => "Test-Member-ID",
       "memberName" => "Test Member Name",
       "deleteFlag" => "0",
     ],
@@ -70,7 +70,7 @@ GmoPaymentGateway\Responses\{Service}Response {
 GmoPaymentGateway\Responses\ErrorResponse {
     +errors: [
       [
-        "code"    => "E01390002",
+        "code" => "E01390002",
         "message" => "指定されたサイトIDと会員IDの会員が存在しません。",
       ],
     ],
@@ -85,9 +85,9 @@ GmoPaymentGateway\Responses\ErrorResponse {
 use GmoPaymentGateway\GMOPGClient;
 
 $gmopg = new GmoPaymentGateway\GMOPGClient([
-    "siteID"   => "Site ID",
+    "siteID" => "Site ID",
     "sitePass" => "Site Password",
-    "shopID"   => "Shop ID",
+    "shopID" => "Shop ID",
     "shopPass" => "Shop Password",
 ]);
 ```
@@ -106,7 +106,7 @@ $gmopg->member->create([
 
 ```php
 $gmopg->member->update([
-    'memberID'   => 'Test-Member-ID',
+    'memberID' => 'Test-Member-ID',
     'memberName' => 'Test Member Name',
 ]);
 ```
@@ -132,8 +132,8 @@ $gmopg->member->delete([
 ```php
 $gmopg->member->saveCard([
     'memberID' => 'Test-Member-ID',
-    'cardNo'   => '4111111111111111',
-    'expire'   => '0000',
+    'cardNo' => '4111111111111111',
+    'expire' => '0000',
 ]);
 ```
 
@@ -142,7 +142,7 @@ $gmopg->member->saveCard([
 ```php
 $gmopg->member->tradedCard([
     'memberID' => 'Test-Member-ID',
-    'orderID'  => 'TEST-ORDER-ID',
+    'orderID' => 'TEST-ORDER-ID',
     
 ]);
 ```
@@ -152,7 +152,7 @@ $gmopg->member->tradedCard([
 ```php
 $gmopg->member->searchCard([
     'memberID' => 'Test-Member-ID',
-    'orderID'  => 'TEST-ORDER-ID',
+    'orderID' => 'TEST-ORDER-ID',
 ]);
 ```
 
@@ -175,7 +175,7 @@ $gmopg->member->searchCardDetail([
 ```php
 $gmopg->member->deleteCard([
     'memberID' => 'Test-Member-ID',
-    'cardSeq'  => '0000'
+    'cardSeq' => '0000'
 ]);
 ```
 
@@ -189,8 +189,8 @@ the [GMO Payment Gateway API Documentation](https://docs.mul-pay.jp/payment/cred
 ```php
 $gmopg->creditCard->entryTran([
     'orderID' => 'TEST-ORDER-ID'
-    'jobCd'   => 'CAPTURE',
-    'amount'  => '10000',
+    'jobCd' => 'CAPTURE',
+    'amount' => '10000',
 ]);
 ```
 
@@ -198,14 +198,14 @@ $gmopg->creditCard->entryTran([
 
 ```php
 $gmopg->creditCard->execTran([
-    'orderID'    => 'TEST-ORDER-ID'
-    'jobCd'      => 'CAPTURE',
-    'amount'     => '10000',
-    'memberID'   => '00000003',
-    'cardSeq'    => '0',
-    'accessID'   => '8867bfeec7b7fc35f78320d01c9a6c11',
+    'orderID' => 'TEST-ORDER-ID'
+    'jobCd' => 'CAPTURE',
+    'amount' => '10000',
+    'memberID' => '00000003',
+    'cardSeq' => '0',
+    'accessID' => '8867bfeec7b7fc35f78320d01c9a6c11',
     'accessPass' => 'c07822acefba90d95417ae37beb198dd',
-    'method'     => '1',
+    'method' => '1',
 ]);
 ```
 
@@ -213,10 +213,10 @@ $gmopg->creditCard->execTran([
 
 ```php
 $gmopg->creditCard->alterTran([
-    'accessID'   => '8867bfeec7b7fc35f78320d01c9a6c11',
+    'accessID' => '8867bfeec7b7fc35f78320d01c9a6c11',
     'accessPass' => 'c07822acefba90d95417ae37beb198dd',
-    'amount'     => '10000',
-    'jobCd'      => 'CANCEL',
+    'amount' => '10000',
+    'jobCd' => 'CANCEL',
 ]);
 ```
 
