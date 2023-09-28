@@ -11,6 +11,7 @@
 - [API Response](#api-response)
     - [Success Response](#success-response)
     - [Error Response](#error-response)
+- [Usage](#usage)
 - [Member and Credit Card Registration](#member-and-credit-card-registration)
     - [Create Member](#create-member)
     - [Update Member](#update-member)
@@ -31,9 +32,15 @@
 ## Introduction
 
 GMO-PAYMENT-GATEWAY-PHP provides an expressive and fluent interface for
-accessing [GMO PAYMENT GATEWAY](https://www.gmo-pg.com/)
+accessing [GMO Payment Gateway](https://www.gmo-pg.com/)
 payment services. While using this package, we recommend reviewing
-the [GMO PAYMENT GATEWAY API Documentation](https://docs.mul-pay.jp/).
+the [GMO Payment Gateway API Documentation](https://docs.mul-pay.jp/).
+
+## GMO Payment Gateway API Documentation
+
+We cannot provide the documentation of GMO Payment Gateway due to a non-disclosure agreement.
+You can obtain the document after signing a non-disclosure agreement
+with [GMO Payment Gateway](https://www.gmo-pg.com/).
 
 ## Installation
 
@@ -49,7 +56,7 @@ composer require saimyosett/gmo-payment-gateway-php
 GmoPaymentGateway\Responses\{Service}Response {
     +success: true,
     +data: [
-      "memberID" => "Test-Member-ID",
+      "memberID"   => "Test-Member-ID",
       "memberName" => "Test Member Name",
       "deleteFlag" => "0",
     ],
@@ -63,7 +70,7 @@ GmoPaymentGateway\Responses\{Service}Response {
 GmoPaymentGateway\Responses\ErrorResponse {
     +errors: [
       [
-        "code" => "E01390002",
+        "code"    => "E01390002",
         "message" => "指定されたサイトIDと会員IDの会員が存在しません。",
       ],
     ],
@@ -90,14 +97,16 @@ $gmopg = new GmoPaymentGateway\GMOPGClient([
 ### Create Member
 
 ```php
-$gmopg->member->create(['memberID' => 'Test-Member-ID']);
+$gmopg->member->create([
+    'memberID' => 'Test-Member-ID'
+]);
 ```
 
 ### Update Member
 
 ```php
 $gmopg->member->update([
-    'memberID' => 'Test-Member-ID',
+    'memberID'   => 'Test-Member-ID',
     'memberName' => 'Test Member Name',
 ]);
 ```
@@ -105,13 +114,17 @@ $gmopg->member->update([
 ### Search Member
 
 ```php
-$gmopg->member->search(['memberID' => 'Test-Member-ID']);
+$gmopg->member->search([
+    'memberID' => 'Test-Member-ID'
+]);
 ```
 
 ### Delete Member
 
 ```php
-$gmopg->member->delete(['memberID' => 'Test-Member-ID']);
+$gmopg->member->delete([
+    'memberID' => 'Test-Member-ID'
+]);
 ```
 
 ### Save Credit Card
@@ -167,7 +180,7 @@ $gmopg->member->deleteCard([
 ```
 
 For further information on how to register Members and Credit Cards, please refer to
-the [GMO PAYMENT GATEWAY API Documentation](https://docs.mul-pay.jp/payment/credit/apimember)
+the [GMO Payment Gateway API Documentation](https://docs.mul-pay.jp/payment/credit/apimember)
 
 ## Credit Card Payment
 
@@ -216,13 +229,7 @@ $gmopg->creditCard->searchTrade([
 ```
 
 For information on how to make Credit Cards payment, please refer to
-the [GMO PAYMENT GATEWAY API Documentation](https://docs.mul-pay.jp/payment/credit/api)
-
-## GMO PAYMENT GATEWAY API Documentation
-
-We cannot provide the documentation of GMO PAYMENT GATEWAY due to a non-disclosure agreement.
-You can obtain the document after signing a non-disclosure agreement
-with [GMO PAYMENT GATEWAY API Documentation](https://docs.mul-pay.jp/)
+the [GMO Payment Gateway API Documentation](https://docs.mul-pay.jp/payment/credit/api)
 
 ## License
 
