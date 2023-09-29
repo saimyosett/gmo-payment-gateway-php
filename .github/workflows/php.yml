@@ -39,17 +39,17 @@ jobs:
       env:
         TEST: ${{secrets.API_KEY}}
       run: |
-        echo KEY: "${{secrets.API_KEY}}"
+        echo KEY: "${{secrets.KEY_HASH}}"
 
     - name: Generate phpunit.xml ${{ vars.SITE_ID }}
       shell: bash
       run: |
-        SITE_ID=${{ vars.SITE_ID }}
-        SITE_PASSWORD=${{ vars.SITE_PASSWORD }}
-        SHOP_ID=${{ vars.SHOP_ID }}
-        SHOP_PASSWORD=${{ vars.SHOP_PASSWORD }}
-        PUBLIC_KEY=${{ vars.PUBLIC_KEY }}
-        KEY_HASH=${{ vars.KEY_HASH }}
+        SITE_ID=${{secrets.SITE_ID}}
+        SITE_PASSWORD=${{secrets.SITE_PASSWORD}}
+        SHOP_ID=${{secrets.SHOP_ID}}
+        SHOP_PASSWORD=${{secrets.SHOP_PASSWORD}}
+        PUBLIC_KEY=${{secrets.PUBLIC_KEY}}
+        KEY_HASH=${{secrets.KEY_HASH}}
         
         echo '<?xml version="1.0" encoding="UTF-8"?>
           <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -71,12 +71,12 @@ jobs:
             </source>
 
             <php>
-                <env name="SITE_ID" value="$SITE_ID"/>
-                <env name="SITE_PASSWORD" value="$SITE_PASSWORD"/>
-                <env name="SHOP_ID" value="$SHOP_ID"/>
-                <env name="SHOP_PASSWORD" value="$SHOP_PASSWORD"/>
-                <env name="PUBLIC_KEY" value="$PUBLIC_KEY"/>
-                <env name="KEY_HASH" value="$KEY_HASH"/>
+                <env name="SITE_ID" value="${{secrets.SITE_ID}}"/>
+                <env name="SITE_PASSWORD" value="${{secrets.SITE_PASSWORD}}"/>
+                <env name="SHOP_ID" value="${{secrets.SHOP_ID}}"/>
+                <env name="SHOP_PASSWORD" value="${{secrets.SHOP_PASSWORD}}"/>
+                <env name="PUBLIC_KEY" value="${{secrets.PUBLIC_KEY}}"/>
+                <env name="KEY_HASH" value="${{secrets.KEY_HASH}}"/>
             </php>
         </phpunit>' > phpunit.xml
 
