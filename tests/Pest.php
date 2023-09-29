@@ -71,12 +71,14 @@ function getCreditCardService()
     return getGMOPGClientInstance()->creditCard;
 }
 
-function generateMemberId($id): string
+function generateMemberId(): string
 {
+    $id = Carbon::now()->format('Ymdhis').rand(1, 1000);
+
     return sprintf('%08d', $id);
 }
 
 function generateOrderId(): string
 {
-    return 'Test-'.Carbon::now()->format('Ymdhis');
+    return 'Test-'.Carbon::now()->format('Ymdhis').rand(1, 1000);
 }

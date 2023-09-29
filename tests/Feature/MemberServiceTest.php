@@ -12,7 +12,7 @@ it('will not create member if memberID is not passed', function () {
 
 it('create member if memberID is passed', function () {
     $service = getMemberService();
-    $response = $service->create(['memberID' => generateMemberId(rand(1, 1000))]);
+    $response = $service->create(['memberID' => generateMemberId()]);
 
     expect($response)->toBeInstanceOf(MemberResponse::class);
 });
@@ -43,7 +43,7 @@ it('return member for specific ID', function () {
 
 it('delete member for specific ID', function () {
     $service = getMemberService();
-    $createResponse = $service->create(['memberID' => generateMemberId(rand(1, 1000))]);
+    $createResponse = $service->create(['memberID' => generateMemberId()]);
     $deleteResponse = $service->delete(['memberID' => $createResponse->data['memberID']]);
 
     expect($deleteResponse)->toBeInstanceOf(MemberResponse::class)
