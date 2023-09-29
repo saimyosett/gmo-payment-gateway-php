@@ -17,9 +17,9 @@
     </source>
     <php>
         <env name="SITE_ID" value=""/>
-        <env name="SITE_PASS" value=""/>
+        <env name="SITE_PASSWORD" value=""/>
         <env name="SHOP_ID" value=""/>
-        <env name="SHOP_PASS" value=""/>
+        <env name="SHOP_PASSWORD" value=""/>
         <env name="PUBLIC_KEY" value=""/>
         <env name="KEY_HASH" value=""/>
     </php>

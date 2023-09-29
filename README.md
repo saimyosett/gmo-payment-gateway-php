@@ -50,17 +50,17 @@ composer require saimyosett/gmo-payment-gateway-php
 
 ## API Response
 
-### Success Response
+Success Response
 
 ```php
 GmoPaymentGateway\Responses\{Service}Response {
-    +success: true,
-    +data: [
+    success: true,
+    data: [
       "memberID" => "Test-Member-ID",
       "memberName" => "Test Member Name",
       "deleteFlag" => "0",
     ],
-    +errors: [],
+    errors: [],
   }
 ```
 
@@ -68,14 +68,14 @@ GmoPaymentGateway\Responses\{Service}Response {
 
 ```php
 GmoPaymentGateway\Responses\ErrorResponse {
-    +errors: [
+    errors: [
       [
         "code" => "E01390002",
         "message" => "指定されたサイトIDと会員IDの会員が存在しません。",
       ],
     ],
-    +"success": false,
-    +"data": [],
+    "success": false,
+    "data": [],
   }
 ```
 
