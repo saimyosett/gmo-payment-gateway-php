@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://github.com/laravel/cashier/actions"><img src="https://github.com/laravel/cashier/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://github.com/saimyosett/gmo-payment-gateway-php/actions"><img src="https://github.com/saimyosett/gmo-payment-gateway-php/workflows/tests/badge.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/saimyosett/gmo-payment-gateway-php"><img src="https://img.shields.io/packagist/dt/saimyosett/gmo-payment-gateway-php" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/saimyosett/gmo-payment-gateway-php"><img src="https://img.shields.io/packagist/v/saimyosett/gmo-payment-gateway-php" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/saimyosett/gmo-payment-gateway-php"><img src="https://img.shields.io/packagist/l/saimyosett/gmo-payment-gateway-php" alt="License"></a>
