@@ -35,6 +35,12 @@ jobs:
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
+    - name: Show varibale
+      env:
+        TEST: ${{ vars.TEST }}
+      run: |
+        echo KEY: '${TEST}'
+
     - name: Generate phpunit.xml ${{ vars.SITE_ID }}
       shell: bash
       run: |
