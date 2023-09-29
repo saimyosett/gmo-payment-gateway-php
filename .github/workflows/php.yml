@@ -39,7 +39,7 @@ jobs:
       env:
         TEST: ${{ vars.TEST }}
       run: |
-        echo KEY: '${TEST}'
+        echo KEY: "$TEST"
 
     - name: Generate phpunit.xml ${{ vars.SITE_ID }}
       shell: bash
