@@ -37,43 +37,42 @@ jobs:
 
     - name: Generate phpunit.xml
       shell: bash
-      env:
-        SITE_ID: ${{ secrets.SITE_ID }}
-        SITE_PASSWORD: ${{ secrets.SITE_PASSWORD }}
-        SHOP_ID: ${{ secrets.SHOP_ID }}
-        SHOP_PASSWORD: ${{ secrets.SHOP_PASSWORD }}
-        PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
-        KEY_HASH: ${{ secrets.KEY_HASH }}
-        run: echo "$SITE_ID"
       run: |
-          echo '<?xml version="1.0" encoding="UTF-8"?>
-            <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.3/phpunit.xsd"
-              bootstrap="vendor/autoload.php"
-              colors="true"
-            >
-              <testsuites>
-                  <testsuite name="Test Suite">
-                      <directory suffix="Test.php">./tests</directory>
-                  </testsuite>
-              </testsuites>
+        SITE_ID=${{ secrets.SITE_ID }}
+        SITE_PASSWORD=${{ secrets.SITE_PASSWORD }}
+        SHOP_ID=${{ secrets.SHOP_ID }}
+        SHOP_PASSWORD=${{ secrets.SHOP_PASSWORD }}
+        PUBLIC_KEY=${{ secrets.PUBLIC_KEY }}
+        KEY_HASH=${{ secrets.KEY_HASH }}
+        
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+          <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.3/phpunit.xsd"
+            bootstrap="vendor/autoload.php"
+            colors="true"
+          >
+            <testsuites>
+                <testsuite name="Test Suite">
+                    <directory suffix="Test.php">./tests</directory>
+                </testsuite>
+            </testsuites>
 
-              <source>
-                  <include>
-                      <directory suffix=".php">./app</directory>
-                      <directory suffix=".php">./src</directory>
-                  </include>
-              </source>
+            <source>
+                <include>
+                    <directory suffix=".php">./app</directory>
+                    <directory suffix=".php">./src</directory>
+                </include>
+            </source>
 
-              <php>
-                  <env name="SITE_ID" value="tsite00048440"/>
-                  <env name="SITE_PASSWORD" value="up1nmrsx"/>
-                  <env name="SHOP_ID" value="tshop00057107"/>
-                  <env name="SHOP_PASSWORD" value="u5s8pfgq"/>
-                  <env name="PUBLIC_KEY" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlhKDXlWw4tu2JrbFITYUDT82BH2W8rLZ9OMFifrYIjO8fz12EsP+Xo+I/xUeh1ctTjGOIQYzZHYacWQ+xjNE5NSF5Beilcn2It0ST8EuQEb0NpRcm7BnYgVP7vYROXUFHiyrOUlPopSW4o+31IKwmO7VtTmq4iHZspMF/25YahIbOJfFF0uMAdIJYRxpYwIS5LWQB0zMT1G70tIGU6yIe3ciN7Le7phljZFidnM+EVSaauela9U8uL00WxTFudpybEwpDTX4zYoE5Cd1DWhZt4pSeKpqEiBMzK/siF1tkPBFifU+VH0e8L8+3n6/v52NwMnhPkoeHdDyLgl1tJnWJwIDAQAB"/>
-                  <env name="KEY_HASH" value="59e3e2708cdd699bfc9d3e8029350b4704c43591b52992f428190ee069cebcc1"/>
-              </php>
-          </phpunit>' > phpunit.xml
+            <php>
+                <env name="SITE_ID" value="$SITE_ID"/>
+                <env name="SITE_PASSWORD" value="$SITE_PASSWORD"/>
+                <env name="SHOP_ID" value="$SHOP_ID"/>
+                <env name="SHOP_PASSWORD" value="$SHOP_PASSWORD"/>
+                <env name="PUBLIC_KEY" value="$PUBLIC_KEY"/>
+                <env name="KEY_HASH" value="$KEY_HASH"/>
+            </php>
+        </phpunit>' > phpunit.xml
 
     - name: Run test suite
       run: composer run-script test
