@@ -68,7 +68,7 @@ jobs:
                   <env name="SITE_ID" value="tsite00048440"/>
                   <env name="SITE_PASSWORD" value="up1nmrsx"/>
                   <env name="SHOP_ID" value="tshop00057107"/>
-                  <env name="SITE_PASSWORD" value="u5s8pfgq"/>
+                  <env name="SHOP_PASSWORD" value="u5s8pfgq"/>
                   <env name="PUBLIC_KEY" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlhKDXlWw4tu2JrbFITYUDT82BH2W8rLZ9OMFifrYIjO8fz12EsP+Xo+I/xUeh1ctTjGOIQYzZHYacWQ+xjNE5NSF5Beilcn2It0ST8EuQEb0NpRcm7BnYgVP7vYROXUFHiyrOUlPopSW4o+31IKwmO7VtTmq4iHZspMF/25YahIbOJfFF0uMAdIJYRxpYwIS5LWQB0zMT1G70tIGU6yIe3ciN7Le7phljZFidnM+EVSaauela9U8uL00WxTFudpybEwpDTX4zYoE5Cd1DWhZt4pSeKpqEiBMzK/siF1tkPBFifU+VH0e8L8+3n6/v52NwMnhPkoeHdDyLgl1tJnWJwIDAQAB"/>
                   <env name="KEY_HASH" value="59e3e2708cdd699bfc9d3e8029350b4704c43591b52992f428190ee069cebcc1"/>
               </php>
