@@ -35,6 +35,9 @@ jobs:
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
+    - name: Create phpunit.xml
+      run: cp phpunit.xml.dist phpunit.xml
+
     - name: Run test suite
       env:
         SITE_ID: ${{ secrets.SITE_ID }}
