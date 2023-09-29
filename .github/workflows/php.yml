@@ -35,15 +35,37 @@ jobs:
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
-    - name: Create phpunit.xml
-      run: cp phpunit.xml.dist phpunit.xml
+    - name: Generate phpunit.xml
+      run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>
+            <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.3/phpunit.xsd"
+              bootstrap="vendor/autoload.php"
+              colors="true"
+            >
+              <testsuites>
+                  <testsuite name="Test Suite">
+                      <directory suffix="Test.php">./tests</directory>
+                  </testsuite>
+              </testsuites>
+
+              <source>
+                  <include>
+                      <directory suffix=".php">./app</directory>
+                      <directory suffix=".php">./src</directory>
+                  </include>
+              </source>
+
+              <php>
+                  <env name="SITE_ID" value="${{ secrets.SITE_ID }}"/>
+                  <env name="SITE_PASS" value="${{ secrets.SITE_PASSWORD }}"/>
+                  <env name="SHOP_ID" value="${{ secrets.SHOP_ID }}"/>
+                  <env name="SHOP_PASS" value="${{ secrets.SHOP_PASSWORD }}"/>
+                  <env name="PUBLIC_KEY" value="${{ secrets.PUBLIC_KEY }}"/>
+                  <env name="KEY_HASH" value="${{ secrets.KEY_HASH }}"/>
+              </php>
+          </phpunit>' > phpunit.xml
+      shell: bash
 
     - name: Run test suite
-      env:
-        SITE_ID: ${{ secrets.SITE_ID }}
-        SITE_PASSWORD: ${{ secrets.SITE_PASSWORD }}
-        SHOP_ID: ${{ secrets.SHOP_ID }}
-        SHOP_PASSWORD: ${{ secrets.SHOP_PASSWORD }}
-        PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
-        KEY_HASH: ${{ secrets.KEY_HASH }}
       run: composer run-script test
