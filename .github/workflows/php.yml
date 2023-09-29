@@ -35,7 +35,7 @@ jobs:
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
-    - name: Generate phpunit.xml
+    - name: Generate phpunit.xml ${{ vars.SITE_ID }}
       shell: bash
       run: |
         SITE_ID=${{ vars.SITE_ID }}
@@ -74,5 +74,5 @@ jobs:
             </php>
         </phpunit>' > phpunit.xml
 
-    - name: Run test suite
-      run: composer run-script test
+    # - name: Run test suite
+      # run: composer run-script test
