@@ -44,13 +44,6 @@ jobs:
     - name: Generate phpunit.xml ${{ vars.SITE_ID }}
       shell: bash
       run: |
-        SITE_ID=${{secrets.SITE_ID}}
-        SITE_PASSWORD=${{secrets.SITE_PASSWORD}}
-        SHOP_ID=${{secrets.SHOP_ID}}
-        SHOP_PASSWORD=${{secrets.SHOP_PASSWORD}}
-        PUBLIC_KEY=${{secrets.PUBLIC_KEY}}
-        KEY_HASH=${{secrets.KEY_HASH}}
-        
         echo '<?xml version="1.0" encoding="UTF-8"?>
           <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.3/phpunit.xsd"
@@ -80,5 +73,5 @@ jobs:
             </php>
         </phpunit>' > phpunit.xml
 
-    # - name: Run test suite
-      # run: composer run-script test
+    - name: Run test suite
+      run: composer run-script test
