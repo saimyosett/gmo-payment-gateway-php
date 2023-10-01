@@ -1,6 +1,6 @@
 {
     "name": "saimyosett/gmo-payment-gateway-php",
-    "description": "GMO Payment Gateway PHP Library",
+    "description": "GMO Payment Gateway SDK for PHP",
     "keywords": [
         "GMO",
         "Payment",
