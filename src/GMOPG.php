@@ -1,6 +1,6 @@
 <?php
 
-namespace GmoPaymentGateway;
+namespace SaiMyoSett\GmoPaymentGateway;
 
 class GMOPG
 {

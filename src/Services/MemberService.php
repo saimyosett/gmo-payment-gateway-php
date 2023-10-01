@@ -1,8 +1,8 @@
 <?php
 
-namespace GmoPaymentGateway\Services;
+namespace SaiMyoSett\GmoPaymentGateway\Services;
 
-use GmoPaymentGateway\Responses\MemberResponse;
+use SaiMyoSett\GmoPaymentGateway\Responses\MemberResponse;
 
 class MemberService extends AbstractService
 {

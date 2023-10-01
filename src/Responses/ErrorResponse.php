@@ -1,8 +1,8 @@
 <?php
 
-namespace GmoPaymentGateway\Responses;
+namespace SaiMyoSett\GmoPaymentGateway\Responses;
 
-use GmoPaymentGateway\Errors;
+use SaiMyoSett\GmoPaymentGateway\Errors;
 
 /**
  * Class ErrorResponse.

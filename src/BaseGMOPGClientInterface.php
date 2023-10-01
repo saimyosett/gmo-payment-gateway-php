@@ -1,6 +1,6 @@
 <?php
 
-namespace GmoPaymentGateway;
+namespace SaiMyoSett\GmoPaymentGateway;
 
 /**
  * Interface for a GMOPG client.

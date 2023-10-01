@@ -1,6 +1,6 @@
 <?php
 
-namespace GmoPaymentGateway\Tests;
+namespace SaiMyoSett\GmoPaymentGateway\Tests;
 
 use PHPUnit\Framework\TestCase as BaseTestCase;
 

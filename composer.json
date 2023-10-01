@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "GmoPaymentGateway\\": "src/"
+            "SaiMyoSett\\GmoPaymentGateway\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "GmoPaymentGateway\\Tests\\": "tests/"
+            "SaiMyoSett\\GmoPaymentGateway\\Tests\\": "tests/"
         }
     },
     "extra": {

@@ -12,8 +12,8 @@
 */
 
 use Carbon\Carbon;
-use GmoPaymentGateway\GMOPGClient;
-use GmoPaymentGateway\Tests\TestCase;
+use SaiMyoSett\GmoPaymentGateway\GMOPGClient;
+use SaiMyoSett\GmoPaymentGateway\Tests\TestCase;
 
 uses(TestCase::class)->in('Feature');
 

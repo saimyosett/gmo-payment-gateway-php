@@ -1,6 +1,6 @@
 <?php
 
-namespace GmoPaymentGateway\Exceptions;
+namespace SaiMyoSett\GmoPaymentGateway\Exceptions;
 
 /**
  * The base interface for all GMOPG exceptions.

@@ -1,13 +1,13 @@
 <?php
 
-namespace GmoPaymentGateway;
+namespace SaiMyoSett\GmoPaymentGateway;
 
-use GmoPaymentGateway\API\ApiRequestor;
-use GmoPaymentGateway\API\ApiResponse;
-use GmoPaymentGateway\Exceptions\InvalidArgumentException;
-use GmoPaymentGateway\Responses\BaseResponse;
-use GmoPaymentGateway\Responses\ErrorResponse;
-use GmoPaymentGateway\Services\AbstractService;
+use SaiMyoSett\GmoPaymentGateway\API\ApiRequestor;
+use SaiMyoSett\GmoPaymentGateway\API\ApiResponse;
+use SaiMyoSett\GmoPaymentGateway\Exceptions\InvalidArgumentException;
+use SaiMyoSett\GmoPaymentGateway\Responses\BaseResponse;
+use SaiMyoSett\GmoPaymentGateway\Responses\ErrorResponse;
+use SaiMyoSett\GmoPaymentGateway\Services\AbstractService;
 
 use function array_merge;
 

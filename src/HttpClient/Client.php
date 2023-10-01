@@ -1,6 +1,6 @@
 <?php
 
-namespace GmoPaymentGateway\HttpClient;
+namespace SaiMyoSett\GmoPaymentGateway\HttpClient;
 
 class Client implements ClientInterface
 {

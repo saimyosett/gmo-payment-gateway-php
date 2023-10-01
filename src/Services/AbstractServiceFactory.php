@@ -1,10 +1,10 @@
 <?php
 
-namespace GmoPaymentGateway\Services;
+namespace SaiMyoSett\GmoPaymentGateway\Services;
 
 /**
  * Abstract base class for all service factories used to expose service
- * instances through {@link \GmoPaymentGateway\GMOClient}.
+ * instances through {@link \SaiMyoSett\GmoPaymentGateway\GMOClient}.
  *
  * Service factories serve two purposes:
  *
@@ -14,7 +14,7 @@ namespace GmoPaymentGateway\Services;
  */
 abstract class AbstractServiceFactory
 {
-    /** @var \GmoPaymentGateway\GMOPGClientInterface */
+    /** @var \SaiMyoSett\GmoPaymentGateway\GMOPGClientInterface */
     private $client;
 
     /** @var array<string, AbstractService|AbstractServiceFactory> */
@@ -23,7 +23,7 @@ abstract class AbstractServiceFactory
     public $currentService;
 
     /**
-     * @param  \GmoPaymentGateway\GMOPGClientInterface  $client
+     * @param  \SaiMyoSett\GmoPaymentGateway\GMOPGClientInterface  $client
      */
     public function __construct($client)
     {

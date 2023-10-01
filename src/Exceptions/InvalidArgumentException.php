@@ -1,6 +1,6 @@
 <?php
 
-namespace GmoPaymentGateway\Exceptions;
+namespace SaiMyoSett\GmoPaymentGateway\Exceptions;
 
 class InvalidArgumentException extends \InvalidArgumentException implements ExceptionInterface
 {

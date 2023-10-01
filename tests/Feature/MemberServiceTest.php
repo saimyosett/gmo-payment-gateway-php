@@ -1,7 +1,7 @@
 <?php
 
-use GmoPaymentGateway\Responses\ErrorResponse;
-use GmoPaymentGateway\Responses\MemberResponse;
+use SaiMyoSett\GmoPaymentGateway\Responses\ErrorResponse;
+use SaiMyoSett\GmoPaymentGateway\Responses\MemberResponse;
 
 it('will not create member if memberID is not passed', function () {
     $service = getMemberService();

@@ -1,11 +1,11 @@
 <?php
 
-namespace GmoPaymentGateway\Services;
+namespace SaiMyoSett\GmoPaymentGateway\Services;
 
-use GmoPaymentGateway\API\TokenRequestor;
-use GmoPaymentGateway\Exceptions\InvalidArgumentException;
-use GmoPaymentGateway\GMOPG;
-use GmoPaymentGateway\Responses\CreditCardResponse;
+use SaiMyoSett\GmoPaymentGateway\API\TokenRequestor;
+use SaiMyoSett\GmoPaymentGateway\Exceptions\InvalidArgumentException;
+use SaiMyoSett\GmoPaymentGateway\GMOPG;
+use SaiMyoSett\GmoPaymentGateway\Responses\CreditCardResponse;
 
 class CreditCardService extends AbstractService
 {

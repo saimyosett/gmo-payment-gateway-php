@@ -1,8 +1,8 @@
 <?php
 
-namespace GmoPaymentGateway\Services;
+namespace SaiMyoSett\GmoPaymentGateway\Services;
 
-use GmoPaymentGateway\Responses\BaseResponse;
+use SaiMyoSett\GmoPaymentGateway\Responses\BaseResponse;
 
 /**
  * Abstract base class for all services.
@@ -10,14 +10,14 @@ use GmoPaymentGateway\Responses\BaseResponse;
 abstract class AbstractService
 {
     /**
-     * @var \GmoPaymentGateway\GMOPGClientInterface
+     * @var \SaiMyoSett\GmoPaymentGateway\GMOPGClientInterface
      */
     protected $client;
 
     /**
      * Initializes a new instance of the {@link AbstractService} class.
      *
-     * @param  \GmoPaymentGateway\GMOPGClientInterface  $client
+     * @param  \SaiMyoSett\GmoPaymentGateway\GMOPGClientInterface  $client
      */
     public function __construct($client)
     {
@@ -27,7 +27,7 @@ abstract class AbstractService
     /**
      * Gets the client used by this service to send requests.
      *
-     * @return \GmoPaymentGateway\GMOPGClientInterface
+     * @return \SaiMyoSett\GmoPaymentGateway\GMOPGClientInterface
      */
     public function getClient()
     {

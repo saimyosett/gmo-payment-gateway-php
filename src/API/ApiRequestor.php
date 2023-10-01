@@ -1,10 +1,10 @@
 <?php
 
-namespace GmoPaymentGateway\API;
+namespace SaiMyoSett\GmoPaymentGateway\API;
 
-use GmoPaymentGateway\GMOPG;
-use GmoPaymentGateway\HttpClient\Client;
-use GmoPaymentGateway\HttpClient\ClientInterface;
+use SaiMyoSett\GmoPaymentGateway\GMOPG;
+use SaiMyoSett\GmoPaymentGateway\HttpClient\Client;
+use SaiMyoSett\GmoPaymentGateway\HttpClient\ClientInterface;
 
 /**
  * Class ApiRequestor.

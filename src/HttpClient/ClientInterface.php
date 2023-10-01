@@ -1,6 +1,6 @@
 <?php
 
-namespace GmoPaymentGateway\HttpClient;
+namespace SaiMyoSett\GmoPaymentGateway\HttpClient;
 
 interface ClientInterface
 {
@@ -10,4 +10,6 @@ interface ClientInterface
      * @param  array  $params  KV pairs for parameters.
      */
     public function requestJson($method, $absUrl, $params);
+
+    public function requestAsForm($method, $absUrl, $params);
 }

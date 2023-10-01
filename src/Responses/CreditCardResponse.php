@@ -1,6 +1,6 @@
 <?php
 
-namespace GmoPaymentGateway\Responses;
+namespace SaiMyoSett\GmoPaymentGateway\Responses;
 
 /**
  * Class CreditCardResponse.

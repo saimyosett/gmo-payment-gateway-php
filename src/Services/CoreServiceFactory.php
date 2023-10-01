@@ -1,6 +1,6 @@
 <?php
 
-namespace GmoPaymentGateway\Services;
+namespace SaiMyoSett\GmoPaymentGateway\Services;
 
 /**
  * Service factory class for API resources in the root namespace.

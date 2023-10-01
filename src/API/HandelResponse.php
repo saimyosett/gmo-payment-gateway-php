@@ -1,6 +1,6 @@
 <?php
 
-namespace GmoPaymentGateway\API;
+namespace SaiMyoSett\GmoPaymentGateway\API;
 
 trait HandelResponse
 {

@@ -54,7 +54,7 @@ composer require saimyosett/gmo-payment-gateway-php
 Success Response
 
 ```php
-GmoPaymentGateway\Responses\{Service}Response {
+SaiMyoSett\GmoPaymentGateway\Responses\{Service}Response {
     success: true,
     data: [
       "memberID" => "Test-Member-ID",
@@ -68,7 +68,7 @@ GmoPaymentGateway\Responses\{Service}Response {
 ### Error Response
 
 ```php
-GmoPaymentGateway\Responses\ErrorResponse {
+SaiMyoSett\GmoPaymentGateway\Responses\ErrorResponse {
     errors: [
       [
         "code" => "E01390002",
@@ -83,9 +83,9 @@ GmoPaymentGateway\Responses\ErrorResponse {
 ## Usage
 
 ```php
-use GmoPaymentGateway\GMOPGClient;
+use SaiMyoSett\GmoPaymentGateway\GMOPGClient;
 
-$gmopg = new GmoPaymentGateway\GMOPGClient([
+$gmopg = new SaiMyoSett\GmoPaymentGateway\GMOPGClient([
     "siteID" => "Site ID",
     "sitePass" => "Site Password",
     "shopID" => "Shop ID",

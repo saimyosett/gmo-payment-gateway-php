@@ -1,8 +1,8 @@
 <?php
 
 use Carbon\Carbon;
-use GmoPaymentGateway\Responses\CreditCardResponse;
-use GmoPaymentGateway\Responses\TokenResponse;
+use SaiMyoSett\GmoPaymentGateway\Responses\CreditCardResponse;
+use SaiMyoSett\GmoPaymentGateway\Responses\TokenResponse;
 
 it('will create transaction', function () {
     $service = getCreditCardService();

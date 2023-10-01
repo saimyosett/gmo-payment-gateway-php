@@ -1,10 +1,10 @@
 <?php
 
-namespace GmoPaymentGateway;
+namespace SaiMyoSett\GmoPaymentGateway;
 
-use GmoPaymentGateway\Services\CoreServiceFactory;
-use GmoPaymentGateway\Services\CreditCardService;
-use GmoPaymentGateway\Services\MemberService;
+use SaiMyoSett\GmoPaymentGateway\Services\CoreServiceFactory;
+use SaiMyoSett\GmoPaymentGateway\Services\CreditCardService;
+use SaiMyoSett\GmoPaymentGateway\Services\MemberService;
 
 /**
  * Client used to send requests to GMOPG's API.
